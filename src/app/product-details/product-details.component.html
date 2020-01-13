@@ -1,0 +1,15 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product else elseDiv">
+	<h3>{{ product.name }}</h3>
+	<h4>{{ product.price | currency }}</h4>
+	<p>{{ product.description }}</p>
+<button (click)="addToCart(product)">Buy</button>
+</div>
+<ng-template #elseDiv>
+Product not found!!
+</ng-template>
+<div>
+	<a [routerLink]="['/']">
+    Back</a>
+</div>
